@@ -7,6 +7,8 @@
     "topic": "Boas práticas",
     "type": "Snippet & Dica",
     "level": "Iniciante / Intermediário",
+    "visible": true,
+    "image": "assets/content/content_erros_comuns.jpg",
     "url": "https://www.youtube.com/@pythoncomthalyson/videos",
     "readTime": "4 min"
   },
@@ -18,6 +20,8 @@
     "topic": "APIs",
     "type": "Tutorial Rápido",
     "level": "Iniciante",
+    "visible": true,
+    "image": "assets/content/content_fastapi.jpg",
     "url": "https://www.youtube.com/@pythoncomthalyson/videos",
     "readTime": "8 min"
   },
@@ -29,6 +33,8 @@
     "topic": "Boas práticas",
     "type": "Guia Prático",
     "level": "Intermediário",
+    "visible": true,
+    "image": "assets/content/content_django.jpg",
     "url": "https://www.youtube.com/@pythoncomthalyson/videos",
     "readTime": "7 min"
   },
@@ -40,6 +46,8 @@
     "topic": "Dicas de Python",
     "type": "Snippets de Código",
     "level": "Todos os níveis",
+    "visible": true,
+    "image": "assets/content/content_snippets.jpg",
     "url": "https://www.youtube.com/@pythoncomthalyson/videos",
     "readTime": "6 min"
   },
@@ -51,6 +59,8 @@
     "topic": "APIs & FastAPI",
     "type": "Projeto Prático",
     "level": "Intermediário",
+    "visible": true,
+    "image": "assets/content/content_projetos_praticos.jpg",
     "url": "https://www.youtube.com/@pythoncomthalyson/videos",
     "readTime": "20 min"
   },
@@ -62,6 +72,8 @@
     "topic": "APIs",
     "type": "Artigo Técnico",
     "level": "Intermediário / Avançado",
+    "visible": true,
+    "image": "assets/content/content_boas_praticas.jpg",
     "url": "https://www.youtube.com/@pythoncomthalyson/videos",
     "readTime": "10 min"
   },
@@ -73,6 +85,8 @@
     "topic": "Snippets",
     "type": "Dica Rápida",
     "level": "Iniciante",
+    "visible": true,
+    "image": "assets/content/content_dicas_python.jpg",
     "url": "https://www.youtube.com/@pythoncomthalyson/videos",
     "readTime": "3 min"
   },
@@ -84,6 +98,8 @@
     "topic": "APIs",
     "type": "Tutorial Rápido",
     "level": "Intermediário",
+    "visible": true,
+    "image": "assets/content/content_django.jpg",
     "url": "https://www.youtube.com/@pythoncomthalyson/videos",
     "readTime": "9 min"
   },
@@ -95,6 +111,8 @@
     "topic": "Dicas de Python & Projetos",
     "type": "Projeto Prático",
     "level": "Iniciante / Fácil",
+    "visible": true,
+    "image": "assets/content/content_projetos_praticos.jpg",
     "url": "https://www.youtube.com/@pythoncomthalyson/videos",
     "readTime": "12 min"
   },
@@ -106,6 +124,8 @@
     "topic": "APIs & Automação",
     "type": "Projeto Prático",
     "level": "Intermediário",
+    "visible": true,
+    "image": "assets/content/content_projetos_praticos.jpg",
     "url": "https://www.youtube.com/@pythoncomthalyson/videos",
     "readTime": "15 min"
   },
@@ -117,6 +137,8 @@
     "topic": "APIs & FastAPI",
     "type": "Projeto Prático",
     "level": "Intermediário",
+    "visible": true,
+    "image": "assets/content/content_projetos_praticos.jpg",
     "url": "https://www.youtube.com/@pythoncomthalyson/videos",
     "readTime": "18 min"
   },
@@ -128,6 +150,8 @@
     "topic": "Boas práticas",
     "type": "Dica de Performance",
     "level": "Intermediário",
+    "visible": true,
+    "image": "assets/content/content_dicas_python.jpg",
     "url": "https://www.youtube.com/@pythoncomthalyson/videos",
     "readTime": "4 min"
   },
@@ -139,6 +163,8 @@
     "topic": "Snippets",
     "type": "Dica Rápida",
     "level": "Iniciante / Intermediário",
+    "visible": true,
+    "image": "assets/content/content_snippets.jpg",
     "url": "https://www.youtube.com/@pythoncomthalyson/videos",
     "readTime": "5 min"
   },
@@ -150,6 +176,8 @@
     "topic": "Boas práticas",
     "type": "Guia de Debug",
     "level": "Iniciante / Intermediário",
+    "visible": true,
+    "image": "assets/content/content_erros_comuns.jpg",
     "url": "https://www.youtube.com/@pythoncomthalyson/videos",
     "readTime": "5 min"
   },
@@ -161,6 +189,8 @@
     "topic": "Dicas de Python",
     "type": "Alerta de Sintaxe",
     "level": "Iniciante",
+    "visible": true,
+    "image": "assets/content/content_erros_comuns.jpg",
     "url": "https://www.youtube.com/@pythoncomthalyson/videos",
     "readTime": "3 min"
   },
@@ -172,6 +202,8 @@
     "topic": "Snippets",
     "type": "Alerta de Sintaxe",
     "level": "Iniciante",
+    "visible": true,
+    "image": "assets/content/content_erros_comuns.jpg",
     "url": "https://www.youtube.com/@pythoncomthalyson/videos",
     "readTime": "4 min"
   },
@@ -183,6 +215,8 @@
     "topic": "Boas práticas",
     "type": "Guia de Debug",
     "level": "Iniciante",
+    "visible": true,
+    "image": "assets/content/content_erros_comuns.jpg",
     "url": "https://www.youtube.com/@pythoncomthalyson/videos",
     "readTime": "4 min"
   }

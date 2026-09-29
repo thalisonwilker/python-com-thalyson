@@ -412,24 +412,37 @@
         container.innerHTML = '<p style="color:var(--muted);padding:1.5rem 0">Nenhum conteúdo encontrado nesta categoria.</p>';
         return;
       }
-      container.innerHTML = items.map(item => `
-        <article class="content-card" role="listitem">
-          <div class="card-meta">
-            <span class="badge-level">${item.type} · ${item.level}</span>
-            ${item.readTime ? `<span class="read-time"><svg class="clock-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ${item.readTime}</span>` : ''}
+      container.innerHTML = items.map(item => {
+        const coverHtml = item.image ? `
+          <div class="card-cover-wrap">
+            <img src="${item.image}" alt="${item.title}" class="card-cover-img" loading="lazy" width="640" height="360">
           </div>
-          <h3>${item.title}</h3>
-          <p>${item.description}</p>
-          <div class="card-footer">
-            <div class="card-hashtags">
-              ${formatHashtags(item.category, item.topic)}
+        ` : '';
+
+        return `
+          <article class="content-card" role="listitem">
+            ${coverHtml}
+            <div class="card-meta">
+              <span class="badge-level">${item.type} · ${item.level}</span>
+              ${item.readTime ? `<span class="read-time"><svg class="clock-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> ${item.readTime}</span>` : ''}
             </div>
-            <a href="${item.url}" class="card-link" target="_blank" rel="noopener noreferrer">
-              Ver conteúdo <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </article>
-      `).join('');
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+            <div class="card-footer">
+              <div class="card-hashtags">
+                ${formatHashtags(item.category, item.topic)}
+              </div>
+              <a href="${item.url}" class="card-link" target="_blank" rel="noopener noreferrer">
+                Ver conteúdo <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function isItemVisible(item) {
+      return item && item.visible !== false && item.show !== false && item.hidden !== true && item.published !== false;
     }
 
     // Carregamento dinâmico de Conteúdos Gratuitos
@@ -437,7 +450,8 @@
       try {
         const res = await fetch('data/content.json');
         if (!res.ok) throw new Error('Falha ao carregar conteúdos');
-        allContent = await res.json();
+        const data = await res.json();
+        allContent = (data || []).filter(isItemVisible);
         renderContent(allContent);
         setupFilters();
       } catch (err) {
@@ -473,7 +487,8 @@
       try {
         const res = await fetch('data/courses.json');
         if (!res.ok) throw new Error('Falha ao carregar cursos');
-        allCourses = await res.json();
+        const data = await res.json();
+        allCourses = (data || []).filter(isItemVisible);
         renderCourses(allCourses);
         setupCourseFilters();
       } catch (err) {
@@ -494,9 +509,15 @@
         const actionText = isFree ? 'Assistir Gratuitamente' : (isOpen ? 'Garantir Vaga' : 'Entrar na Lista de Espera');
         const isFeatured = isOpen ? 'featured' : '';
         const featuresList = (course.features || []).map(f => `<li>${f}</li>`).join('');
+        const coverHtml = course.image ? `
+          <div class="course-cover-wrap">
+            <img src="${course.image}" alt="${course.title}" class="course-cover-img" loading="lazy" width="640" height="360">
+          </div>
+        ` : '';
 
         return `
           <article class="course-card ${isFeatured}" role="listitem">
+            ${coverHtml}
             <span class="course-badge ${badgeClass}">${course.tierLabel ? `${course.tierLabel} · ` : ''}${course.statusLabel}</span>
             <h3>${course.title}</h3>
             <p class="course-headline">${course.headline}</p>
