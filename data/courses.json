@@ -1,56 +1,122 @@
 [
   {
     "id": 1,
-    "title": "Python do Zero ao Profissional",
-    "headline": "A base sólida que todo desenvolvedor precisa",
-    "description": "Formação completa para iniciantes e transição de carreira: lógica de programação, orientação a objetos, automações de scripts, testes e projeto final em produção.",
+    "title": "Primeiros Passos com FastAPI & Python Moderno",
+    "tier": "paid",
+    "tierLabel": "Curso Pago",
+    "headline": "A base sólida para construir APIs profissionais de alto nível",
+    "description": "Uma formação aprofundada para quem quer dominar FastAPI, tipagem estática moderna com Pydantic v2, injeção de dependências, Pytest e Clean Architecture.",
     "price": "Em breve",
-    "duration": "40 horas",
-    "mode": "Online + Comunidade",
+    "duration": "45 horas",
+    "mode": "Online + Projetos Reais",
     "status": "coming_soon",
     "statusLabel": "Lista de Espera",
     "features": [
-      "Acesso vitalício aos materiais",
-      "Projetos práticos do mundo real",
-      "Mentoria em grupo quinzenal",
-      "Certificado de conclusão"
+      "FastAPI do zero ao deploy com arquitetura em camadas",
+      "Testes automatizados completos com Pytest e fixtures",
+      "Integração assíncrona com PostgreSQL, SQLAlchemy 2.0 e Alembic",
+      "Projeto final completo containerizado com Docker e CI/CD"
     ],
     "url": "https://www.youtube.com/@pythoncomthalyson"
   },
   {
     "id": 2,
-    "title": "Django & APIs para Ambientes Reais",
-    "headline": "Construa sistemas web prontos para escala",
-    "description": "Do banco relacional (PostgreSQL) ao deploy em contêineres: modelagem, queries eficientes no ORM, autenticação segura, background workers (Celery) e Docker.",
+    "title": "APIs Escaláveis com FastAPI, Django & Docker",
+    "tier": "paid",
+    "tierLabel": "Formação Avançada",
+    "headline": "Do monolito aos microsserviços de alta performance",
+    "description": "Aprenda a projetar sistemas resilientes, mensageria e filas assíncronas com Celery/Redis, caching, autenticação JWT robusta, rate limiting e observabilidade.",
     "price": "Em breve",
-    "duration": "35 horas",
-    "mode": "Online com Projetos",
+    "duration": "50 horas",
+    "mode": "Online com Projetos Práticos",
     "status": "coming_soon",
     "statusLabel": "Lista de Espera",
     "features": [
-      "Arquitetura de microsserviços e monolito modular",
-      "Pipeline de CI/CD completa no GitHub Actions",
-      "Deploy no Fly.io / AWS",
-      "Comunidade exclusiva no Discord"
+      "FastAPI assíncrono e Django REST Framework em produção",
+      "Cache de alta velocidade com Redis e mensageria assíncrona",
+      "Deploy seguro em cloud com Docker Compose, Nginx e SSL",
+      "Comunidade exclusiva no Discord para networking e dúvidas"
     ],
     "url": "https://www.youtube.com/@pythoncomthalyson"
   },
   {
     "id": 3,
-    "title": "Mentoria Individual 1-on-1",
-    "headline": "Aceleração personalizada para sua carreira",
-    "description": "Sessões individuais focadas no seu objetivo: code review, preparação técnica para entrevistas nacionais e internacionais, arquitetura de software e plano de carreira.",
+    "title": "Mentoria Técnica & Code Review 1-on-1",
+    "tier": "paid",
+    "tierLabel": "Mentoria Individual",
+    "headline": "Aceleração personalizada com diagnóstico real e acompanhamento direto",
+    "description": "Sessões individuais focadas na sua evolução profissional. Revisão minuciosa de código do seu repositório, arquitetura de software, preparação para entrevistas e plano de carreira sob medida.",
     "price": "Vagas Limitadas",
     "duration": "4 encontros individuais",
     "mode": "Ao vivo pelo Google Meet",
     "status": "open",
     "statusLabel": "Inscrições Abertas",
     "features": [
-      "Diagnóstico inicial de habilidades e plano de estudo",
-      "Revisão detalhada do seu GitHub e portfólio",
-      "Simulação de entrevista técnica (Mock interview)",
-      "Suporte direto via WhatsApp por 60 dias"
+      "Diagnóstico honesto do seu momento técnico e objetivos",
+      "Code review linha a linha no seu repositório GitHub",
+      "Simulação de entrevista técnica e System Design",
+      "Acesso direto para tirar dúvidas durante a mentoria"
     ],
     "url": "https://linkedin.com/in/thalysonwilker"
+  },
+  {
+    "id": 4,
+    "title": "Minicurso Gratuito: Fundamentos de FastAPI & Pydantic",
+    "tier": "free",
+    "tierLabel": "Vídeo & Curso Gratuito",
+    "headline": "Aprenda a criar sua primeira API moderna em Python",
+    "description": "Série prática e direta ao ponto ensinando rotas assíncronas, validação de schemas com Pydantic, documentação Swagger interativa e status codes HTTP corretos.",
+    "price": "100% Gratuito",
+    "duration": "3 horas de conteúdo",
+    "mode": "Vídeos no YouTube",
+    "status": "free",
+    "statusLabel": "Acesso Gratuito",
+    "features": [
+      "Instalação e configuração de ambiente virtual moderno",
+      "Criação de endpoints CRUD com async/await",
+      "Validação e tipagem de dados com Pydantic v2",
+      "Código-fonte aberto e disponível no GitHub"
+    ],
+    "url": "https://www.youtube.com/@pythoncomthalyson/videos"
+  },
+  {
+    "id": 5,
+    "title": "Workshop Gratuito: Otimização de Queries no Django ORM",
+    "tier": "free",
+    "tierLabel": "Vídeo & Curso Gratuito",
+    "headline": "Elimine gargalos de banco de dados e consultas lentas",
+    "description": "Imersão prática focada em identificar o problema de N+1 queries, dominar select_related, prefetch_related, subqueries e índices de banco de dados no Django.",
+    "price": "100% Gratuito",
+    "duration": "2 horas de imersão",
+    "mode": "Vídeos no YouTube",
+    "status": "free",
+    "statusLabel": "Acesso Gratuito",
+    "features": [
+      "Diagnóstico de lentidão com Django Debug Toolbar",
+      "Uso avançado de Prefetch e Q/F objects",
+      "Boas práticas de indexação e paginação de alto desempenho",
+      "Repositório demonstrativo com benchmarks comparativos"
+    ],
+    "url": "https://www.youtube.com/@pythoncomthalyson/videos"
+  },
+  {
+    "id": 6,
+    "title": "Série Prática: Construindo Projetos do Zero ao Deploy",
+    "tier": "free",
+    "tierLabel": "Vídeo & Curso Gratuito",
+    "headline": "Aprenda Python criando aplicações reais do começo ao fim",
+    "description": "Vídeos mão na massa com construção de encurtadores de URL, ferramentas de automação CLI com Typer e microserviços integrados com Docker.",
+    "price": "100% Gratuito",
+    "duration": "Playlists no Canal",
+    "mode": "Vídeos no YouTube",
+    "status": "free",
+    "statusLabel": "Acesso Gratuito",
+    "features": [
+      "Projetos práticos com código limpo e arquitetura modular",
+      "Uso de bibliotecas modernas do ecossistema Python",
+      "Dicas de padrões de projeto e tratamento de exceções",
+      "Comunidade nos comentários e suporte colaborativo"
+    ],
+    "url": "https://www.youtube.com/@pythoncomthalyson/videos"
   }
 ]
