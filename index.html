@@ -256,8 +256,28 @@
             <h2 id="treinamentos-title">A profundidade chega com a prática.</h2>
           </div>
         </div>
-        <p class="section-lead-desc">Formações pensadas para quem quer ir fundo — não apenas executar código, mas
-          entender o porquê de cada decisão.</p>
+        <p class="section-lead-desc">Formações pensadas para quem quer ir fundo — não apenas executar código, mas entender o porquê de cada decisão.</p>
+      </div>
+
+      <!-- FILTRO DE CURSOS -->
+      <div class="filter-container" aria-label="Filtro de cursos e formações">
+        <div class="filter-bar" id="course-filter-bar">
+          <button class="filter-btn active" data-course-tier="todos">
+            <svg class="btn-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="3" />
+            </svg> Todos
+          </button>
+          <button class="filter-btn" data-course-tier="paid">
+            <svg class="btn-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg> Cursos Pagos &amp; Mentorias
+          </button>
+          <button class="filter-btn" data-course-tier="free">
+            <svg class="btn-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="5 3 19 12 5 21 5 3" />
+            </svg> Vídeos &amp; Cursos Gratuitos
+          </button>
+        </div>
       </div>
 
       <div class="courses-grid" id="courses-list" role="list">
@@ -445,42 +465,72 @@
       });
     }
 
+    let allCourses = [];
+
     // Carregamento dinâmico de Treinamentos e Cursos
     async function loadCourses() {
       const container = document.getElementById('courses-list');
       try {
         const res = await fetch('data/courses.json');
         if (!res.ok) throw new Error('Falha ao carregar cursos');
-        const courses = await res.json();
-        container.innerHTML = courses.map(course => {
-          const isOpen = course.status === 'open';
-          const badgeClass = isOpen ? 'open' : 'coming-soon';
-          const actionText = isOpen ? 'Garantir Vaga' : 'Entrar na Lista de Espera';
-          const isFeatured = isOpen ? 'featured' : '';
-          const featuresList = (course.features || []).map(f => `<li>${f}</li>`).join('');
-
-          return `
-            <article class="course-card ${isFeatured}" role="listitem">
-              <span class="course-badge ${badgeClass}">${course.statusLabel}</span>
-              <h3>${course.title}</h3>
-              <p class="course-headline">${course.headline}</p>
-              <p class="course-desc">${course.description}</p>
-              <ul class="course-features">
-                ${featuresList}
-              </ul>
-              <div class="course-pricing">
-                <span class="course-duration">${course.duration}</span>
-                <span class="course-price">${course.price}</span>
-              </div>
-              <a href="${course.url}" class="btn-course" target="_blank" rel="noopener noreferrer">
-                ${actionText} ↗
-              </a>
-            </article>
-          `;
-        }).join('');
+        allCourses = await res.json();
+        renderCourses(allCourses);
+        setupCourseFilters();
       } catch (err) {
         container.innerHTML = '<p style="color:var(--muted);padding:1.5rem 0">Treinamentos em planejamento.</p>';
       }
+    }
+
+    function renderCourses(courses) {
+      const container = document.getElementById('courses-list');
+      if (!courses || courses.length === 0) {
+        container.innerHTML = '<p style="color:var(--muted);padding:1.5rem 0">Nenhum curso encontrado nesta categoria.</p>';
+        return;
+      }
+      container.innerHTML = courses.map(course => {
+        const isOpen = course.status === 'open';
+        const isFree = course.tier === 'free';
+        const badgeClass = isFree ? 'free' : (isOpen ? 'open' : 'coming-soon');
+        const actionText = isFree ? 'Assistir Gratuitamente' : (isOpen ? 'Garantir Vaga' : 'Entrar na Lista de Espera');
+        const isFeatured = isOpen ? 'featured' : '';
+        const featuresList = (course.features || []).map(f => `<li>${f}</li>`).join('');
+
+        return `
+          <article class="course-card ${isFeatured}" role="listitem">
+            <span class="course-badge ${badgeClass}">${course.tierLabel ? `${course.tierLabel} · ` : ''}${course.statusLabel}</span>
+            <h3>${course.title}</h3>
+            <p class="course-headline">${course.headline}</p>
+            <p class="course-desc">${course.description}</p>
+            <ul class="course-features">
+              ${featuresList}
+            </ul>
+            <div class="course-pricing">
+              <span class="course-duration">${course.duration}</span>
+              <span class="course-price">${course.price}</span>
+            </div>
+            <a href="${course.url}" class="btn-course" target="_blank" rel="noopener noreferrer">
+              ${actionText} ↗
+            </a>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function setupCourseFilters() {
+      const filterButtons = document.querySelectorAll('#course-filter-bar .filter-btn');
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const tier = btn.getAttribute('data-course-tier');
+          if (tier === 'todos') {
+            renderCourses(allCourses);
+          } else {
+            const filtered = allCourses.filter(course => course.tier === tier);
+            renderCourses(filtered);
+          }
+        });
+      });
     }
 
     loadContent();
