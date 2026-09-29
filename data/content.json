@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Primeiros passos com Python",
+    "description": "Instale o Python 3, configure seu ambiente de desenvolvimento no VS Code/Terminal e escreva seus primeiros scripts com boas práticas.",
+    "type": "Tutorial",
+    "level": "Iniciante",
+    "url": "https://www.youtube.com/@pythoncomthalyson/videos",
+    "readTime": "10 min"
+  },
+  {
+    "id": 2,
+    "title": "Estruturas de Dados Essenciais",
+    "description": "Domine listas, dicionários, tuplas e sets com exemplos reais e casos de uso do dia a dia de engenharia de software.",
+    "type": "Guia",
+    "level": "Iniciante",
+    "url": "https://www.youtube.com/@pythoncomthalyson/videos",
+    "readTime": "15 min"
+  },
+  {
+    "id": 3,
+    "title": "Funções, Args, Kwargs e Decorators",
+    "description": "Aprenda como funções funcionam por debaixo dos panos em Python, escopos de variáveis e crie decorators profissionais para logs e autenticação.",
+    "type": "Tutorial",
+    "level": "Intermediário",
+    "url": "https://www.youtube.com/@pythoncomthalyson/videos",
+    "readTime": "12 min"
+  },
+  {
+    "id": 4,
+    "title": "APIs REST com Django & DRF",
+    "description": "Construa APIs escaláveis, configure autenticação JWT, documentação Swagger/OpenAPI e arquitetura limpa com Django.",
+    "type": "Vídeo",
+    "level": "Intermediário",
+    "url": "https://www.youtube.com/@pythoncomthalyson/videos",
+    "readTime": "25 min"
+  },
+  {
+    "id": 5,
+    "title": "IA Prática com Python & Langflow",
+    "description": "Integre Modelos de Linguagem (LLMs), agentes e pipelines de inteligência artificial de forma simples, visual e open source.",
+    "type": "Artigo",
+    "level": "Avançado",
+    "url": "https://www.youtube.com/@pythoncomthalyson/videos",
+    "readTime": "18 min"
+  },
+  {
+    "id": 6,
+    "title": "Testes Automatizados com Pytest",
+    "description": "Aprenda a criar fixtures, mocks e testes unitários e de integração confiáveis para nunca mais subir bug em produção.",
+    "type": "Tutorial",
+    "level": "Intermediário",
+    "url": "https://www.youtube.com/@pythoncomthalyson/videos",
+    "readTime": "14 min"
+  }
+]

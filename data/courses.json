@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Python do Zero ao Profissional",
+    "headline": "A base sólida que todo desenvolvedor precisa",
+    "description": "Formação completa para iniciantes e transição de carreira: lógica de programação, orientação a objetos, automações de scripts, testes e projeto final em produção.",
+    "price": "Em breve",
+    "duration": "40 horas",
+    "mode": "Online + Comunidade",
+    "status": "coming_soon",
+    "statusLabel": "Lista de Espera",
+    "features": [
+      "Acesso vitalício aos materiais",
+      "Projetos práticos do mundo real",
+      "Mentoria em grupo quinzenal",
+      "Certificado de conclusão"
+    ],
+    "url": "https://www.youtube.com/@pythoncomthalyson"
+  },
+  {
+    "id": 2,
+    "title": "Django & APIs para Ambientes Reais",
+    "headline": "Construa sistemas web prontos para escala",
+    "description": "Do banco relacional (PostgreSQL) ao deploy em contêineres: modelagem, queries eficientes no ORM, autenticação segura, background workers (Celery) e Docker.",
+    "price": "Em breve",
+    "duration": "35 horas",
+    "mode": "Online com Projetos",
+    "status": "coming_soon",
+    "statusLabel": "Lista de Espera",
+    "features": [
+      "Arquitetura de microsserviços e monolito modular",
+      "Pipeline de CI/CD completa no GitHub Actions",
+      "Deploy no Fly.io / AWS",
+      "Comunidade exclusiva no Discord"
+    ],
+    "url": "https://www.youtube.com/@pythoncomthalyson"
+  },
+  {
+    "id": 3,
+    "title": "Mentoria Individual 1-on-1",
+    "headline": "Aceleração personalizada para sua carreira",
+    "description": "Sessões individuais focadas no seu objetivo: code review, preparação técnica para entrevistas nacionais e internacionais, arquitetura de software e plano de carreira.",
+    "price": "Vagas Limitadas",
+    "duration": "4 encontros individuais",
+    "mode": "Ao vivo pelo Google Meet",
+    "status": "open",
+    "statusLabel": "Inscrições Abertas",
+    "features": [
+      "Diagnóstico inicial de habilidades e plano de estudo",
+      "Revisão detalhada do seu GitHub e portfólio",
+      "Simulação de entrevista técnica (Mock interview)",
+      "Suporte direto via WhatsApp por 60 dias"
+    ],
+    "url": "https://linkedin.com/in/thalysonwilker"
+  }
+]
