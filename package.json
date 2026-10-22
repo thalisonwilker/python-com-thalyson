@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs",
+    "pretest": "node scripts/build.mjs",
     "start": "node scripts/serve.mjs",
     "test": "node --test",
     "docker:build": "docker build -t python-com-thalyson .",
