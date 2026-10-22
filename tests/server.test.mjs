@@ -44,8 +44,8 @@ test('serves the built site on the official domain', async () => {
   assert.match(response.headers['content-security-policy'], /frame-ancestors 'none'/);
 });
 
-test('rejects default Fly hostname and arbitrary hosts', async () => {
-  for (const host of ['python-com-thalyson.fly.dev', 'example.com']) {
+test('rejects arbitrary unauthorized hosts', async () => {
+  for (const host of ['unauthorized.example.com', 'example.com']) {
     assert.equal((await get('/', { host })).status, 404);
     assert.equal((await get('/assets/favicon.svg', { host })).status, 404);
   }

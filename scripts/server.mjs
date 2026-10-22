@@ -47,7 +47,7 @@ export function createSiteServer({ root = 'dist', allowedHost } = {}) {
       return respond(400, 'Requisição inválida');
     }
 
-    // Health check endpoint for Fly.io / Docker
+    // Health check endpoint for Docker / local development
     if (pathname === '/healthz') return respond(200, 'ok');
 
     const hostname = (req.headers.host || '').toLowerCase().split(':')[0];

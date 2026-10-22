@@ -2,7 +2,7 @@
 
 Portal educacional focado na linguagem de programação Python, oferecendo **conteúdos gratuitos** (artigos, guias, tutoriais e vídeos) e **treinamentos pagos** (cursos imersivos e mentorias individuais).
 
-Seguindo a mesma arquitetura dos sites `tech.thalyson.com` e `thalisonwilker`: estático, veloz, sem dependências externas de runtime e hospedado via Docker + Nginx no Fly.io.
+Seguindo a mesma arquitetura dos sites `tech.thalyson.com` e `thalisonwilker`: estático, veloz, sem dependências externas de runtime e hospedado via GitHub Pages com domínio customizado.
 
 ---
 
@@ -57,27 +57,25 @@ Os testes utilizam o test runner nativo do Node.js (`node:test`) e validam rotas
 
 ---
 
-## ☁️ Publicar e Deploy (Fly.io)
+## ☁️ Publicar e Deploy (GitHub Pages)
 
-O deploy utiliza Docker com imagem base leve `nginx:1.27-alpine` na região de São Paulo (`gru`), com 256 MB de RAM.
+O deploy é automatizado diretamente pelo **GitHub Pages** utilizando o workflow em `.github/workflows/deploy.yml`.
 
-O endereço oficial configurado é `https://python.thalyson.com`.
+O endereço oficial configurado é `https://python.thalyson.com` através do arquivo `CNAME`.
 
 ### GitHub Actions
 
 O workflow `.github/workflows/deploy.yml` executa automaticamente:
-1. Validação e build da imagem Docker em pull requests e pushes na `main`.
-2. Smoke test no endpoint `/healthz`.
-3. Deploy seguro no Fly.io ao mesclar na branch `main` utilizando o segredo `FLY_API_TOKEN`.
+1. Validação com Node.js 22 e instalação limpa de dependências (`npm ci`).
+2. Geração dos arquivos estáticos na pasta `dist/` (`npm run build`), incluindo páginas, estilos, assets, dados e `CNAME`.
+3. Execução da suíte de testes automatizados (`npm test`).
+4. Empacotamento do artefato e deploy oficial no GitHub Pages ao mesclar na branch `main`.
 
-### Comandos de Configuração Inicial no Fly:
+### Configuração no Repositório GitHub:
 
-```bash
-fly apps create python-com-thalyson --org SUA_ORGANIZACAO
-fly deploy --remote-only --ha=false
-fly certs add python.thalyson.com
-fly certs check python.thalyson.com
-```
+Em **Settings > Pages** do repositório:
+- **Build and deployment > Source**: Selecione `GitHub Actions`.
+- O domínio personalizado `python.thalyson.com` será gerenciado com HTTPS automático provido pelo GitHub.
 
 ---
 
@@ -103,6 +101,7 @@ python-com-thalyson/
 │   └── workflows/
 │       └── deploy.yml
 ├── .gitignore
+├── CNAME
 ├── Dockerfile
 ├── README.md
 ├── assets/
@@ -111,7 +110,7 @@ python-com-thalyson/
 ├── data/
 │   ├── content.json        # Conteúdos abertos e gratuitos
 │   └── courses.json        # Treinamentos e mentorias pagas
-├── fly.toml
+├── docker-compose.yml
 ├── index.html
 ├── nginx.conf
 ├── package.json
